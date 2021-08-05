@@ -1,50 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-
-    <title>Number guessing game</title>
-
-    <style>
-      html {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="margin-left: 220px; color: #49c0ec;">연도 계산기 </h1>
+    <div class="form" style="margin-top: 30px; margin-left: 50px; color: #8c79b4;">
+        <label for="">궁금하신 연도를 입력해주세요 (예시:2010): </label><input type="text" class="textfield" id="textfield">
+        <input type="submit" value="클릭" class="btnfield">
+    </div>
+    <div>
+        <p class="anwertext" style="margin-left: 150px; margin-top: 35px;" ></p>
+    </div>
+</body>
+<style>
+    html {
         font-family: sans-serif;
       }
-
-      body {
+    body {
         width: 50%;
         max-width: 800px;
         min-width: 480px;
         margin: 0 auto;
       }
-
-      .lastResult {
-        color: white;
-        padding: 3px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1>Number guessing game</h1>
-
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
-
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="text" id="guessField" class="guessField">
-      <input type="submit" value="Submit guess" class="guessSubmit">
-    </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-    </div>
-
+</style>
     <script>
+        const anwertext=document.querySelector(".anwertext");
+        const btnfield=document.querySelector(".btnfield");
+        const textfield=document.querySelector(".textfield");
 
-      // Your JavaScript goes here
+        function year(){
+            let anwer = Number(textfield.value);
+            if (anwer % 12 == 4) {
+                var 변수 = `자년이고, 쥐띠입니다`;
+            }if (anwer % 12 == 5) {
+                var 변수 = `축년이고, 소띠입니다`;             
+            }if (anwer % 12 == 6) {
+                var 변수 = `인년이고, 호랑이띠입니다`;              
+            }if (anwer % 12 == 7) {
+                var 변수 = `묘년이고, 토끼띠입니다`;              
+            }if (anwer % 12 == 8) {
+                var 변수 = `진년이고, 용띠입니다`;
+            }if (anwer % 12 == 9) {
+                var 변수 = `사년이고, 뱀띠입니다`;
+            }if (anwer % 12 == 10) {
+                var 변수 = `오년이고, 말띠입니다`;
+            }if (anwer % 12 == 11) {
+                var 변수 = `미년이고, 양띠입니다`;
+            }if (anwer % 12 == 0) {
+                var 변수 = `신년이고, 원숭이띠입니다`;
+            }if (anwer % 12 == 1) {
+                var 변수 = `유년이고, 닭띠입니다`;
+            }if (anwer % 12 == 2) {
+                var 변수 = `술년이고, 개띠입니다`;
+            }if (anwer % 12 == 3) {
+                var 변수 = `해년이고, 돼지띠입니다`;
+            }
+            
+            
+            if(anwer % 10 == 4){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 갑${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 5){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 을${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 6){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 병${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 7){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 정${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 8){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 무${변수}`;
+                anwertext.style.color = "#2253a3"
+            }if(anwer % 10 == 9){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 기${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 0){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 경${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 1){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 신${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 2){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 임${변수}`;
+                anwertext.style.color = "#2253a3";
+            }if(anwer % 10 == 3){
+                anwertext.innerText=`입력하신 ${textfield.value}년은 계${변수}`;
+                anwertext.style.color = "#2253a3";
+            }
+            textfield.value = "";
+            textfield.focus();
+        }
+        
+        
+        btnfield.addEventListener("click", year);
+        textfield.focus();
+
+        
+
+
+
+
+
+
+        
+
+
 
     </script>
-  </body>
 </html>
